@@ -1,0 +1,2 @@
+# smartshare
+Smartshare Core Implementation
