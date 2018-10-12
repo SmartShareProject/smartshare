@@ -1,8 +1,8 @@
 ## SmartShare
 
 ## Clone the source
-    mkdir -p $GOPATH/src/github.com/smartshare/
-    cd $GOPATH/src/github.com/smartshare/
+    mkdir -p $GOPATH/src/github.com/smartshareproject/
+    cd $GOPATH/src/github.com/smartshareproject/
     git clone https://github.com/smartshareproject/smartshare
 
 ## Building the source
