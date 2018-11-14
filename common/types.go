@@ -34,6 +34,7 @@ func BytesToHash(b []byte) Hash {
 }
 func BigToHash(b *big.Int) Hash { return BytesToHash(b.Bytes()) }
 func HexToHash(s string) Hash   { return BytesToHash(FromHex(s)) }
+func StringToHash(s string) Hash { return BytesToHash([]byte(s)) }
 
 // Get the string representation of the underlying hash
 func (h Hash) Str() string   { return string(h[:]) }
