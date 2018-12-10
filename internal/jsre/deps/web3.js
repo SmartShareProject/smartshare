@@ -5210,16 +5210,8 @@ var blockCall = function (args) {
     return (utils.isString(args[0]) && args[0].indexOf('0x') === 0) ? "ssp_getBlockByHash" : "ssp_getBlockByNumber";
 };
 
-var sspBlockCall = function (args) {
-    return (utils.isString(args[0]) && args[0].indexOf('0x') === 0) ? "ssp_ethGetBlockByHash" : "ssp_ethGetBlockByNumber";
-};
-
 var transactionFromBlockCall = function (args) {
     return (utils.isString(args[0]) && args[0].indexOf('0x') === 0) ? 'ssp_getTransactionByBlockHashAndIndex' : 'ssp_getTransactionByBlockNumberAndIndex';
-};
-
-var sspTransactionFromBlockCall = function (args) {
-    return (utils.isString(args[0]) && args[0].indexOf('0x') === 0) ? 'ssp_ethGetTransactionByBlockHashAndIndex' : 'ssp_ethGetTransactionByBlockNumberAndIndex';
 };
 
 var uncleCall = function (args) {
