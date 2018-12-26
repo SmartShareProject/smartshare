@@ -3,6 +3,7 @@ package dpos
 import (
 	"bytes"
 	"encoding/json"
+	"sort"
 
 	lru "github.com/hashicorp/golang-lru"
 	"github.com/smartshareproject/smartshare/common"
@@ -39,6 +40,13 @@ type Snapshot struct {
 	Votes   []*Vote                     `json:"votes"`   // List of votes cast in chronological order
 	Tally   map[common.Address]Tally    `json:"tally"`   // Current vote tally to avoid recalculating
 }
+
+// signersAscending implements the sort interface to allow sorting a list of addresses
+type signersAscending []common.Address
+
+func (s signersAscending) Len() int           { return len(s) }
+func (s signersAscending) Less(i, j int) bool { return bytes.Compare(s[i][:], s[j][:]) < 0 }
+func (s signersAscending) Swap(i, j int)      { s[i], s[j] = s[j], s[i] }
 
 // newSnapshot creates a new snapshot with the specified startup parameters. This
 // method does not initialize the set of recent signers, so only ever use if for
@@ -274,13 +282,7 @@ func (s *Snapshot) signers() []common.Address {
 	for signer := range s.Signers {
 		signers = append(signers, signer)
 	}
-	for i := 0; i < len(signers); i++ {
-		for j := i + 1; j < len(signers); j++ {
-			if bytes.Compare(signers[i][:], signers[j][:]) > 0 {
-				signers[i], signers[j] = signers[j], signers[i]
-			}
-		}
-	}
+	sort.Sort(signersAscending(signers))
 	return signers
 }
 
