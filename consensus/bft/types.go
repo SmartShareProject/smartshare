@@ -5,9 +5,9 @@ import (
 	"io"
 	"math/big"
 
-	"github.com/smartshareproject/smartshare/common"
-	"github.com/smartshareproject/smartshare/core/types"
-	"github.com/smartshareproject/smartshare/rlp"
+	"github.com/linkeye/linkeye/common"
+	"github.com/linkeye/linkeye/core/types"
+	"github.com/linkeye/linkeye/rlp"
 )
 
 // Proposal supports retrieving height and serialized block to be used during BFT consensus.

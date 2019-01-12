@@ -3,7 +3,7 @@ package bft
 import (
 	"strings"
 
-	"github.com/smartshareproject/smartshare/common"
+	"github.com/linkeye/linkeye/common"
 )
 
 type Validator interface {

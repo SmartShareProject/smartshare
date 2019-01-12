@@ -1,11 +1,11 @@
 package bft
 
 import (
-	"github.com/smartshareproject/smartshare/common"
-	"github.com/smartshareproject/smartshare/crypto"
-	"github.com/smartshareproject/smartshare/crypto/sha3"
-	"github.com/smartshareproject/smartshare/log"
-	"github.com/smartshareproject/smartshare/rlp"
+	"github.com/linkeye/linkeye/common"
+	"github.com/linkeye/linkeye/crypto"
+	"github.com/linkeye/linkeye/crypto/sha3"
+	"github.com/linkeye/linkeye/log"
+	"github.com/linkeye/linkeye/rlp"
 )
 
 func RLPHash(v interface{}) (h common.Hash) {
