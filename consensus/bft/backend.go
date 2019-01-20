@@ -4,8 +4,8 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/linkeye/linkeye/common"
-	"github.com/linkeye/linkeye/event"
+	"github.com/smartshareproject/smartshare/common"
+	"github.com/smartshareproject/smartshare/event"
 )
 
 // Backend provides application specific functions for BFT core
